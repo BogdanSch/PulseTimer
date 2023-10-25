@@ -16,8 +16,11 @@ $dark: #0f0f0f;
 $accent: #3e92cc;
 $gray: #575757;
 $gray-light: #6d6d6d;
+$gray-dark: #333333;
 $light: #f0f8ff;
-$footer-Background: #f2f2f2;
+$light-Background: #f2f2f2;
+$header-Shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 
 body {
   font-family: "Roboto", sans-serif;
@@ -53,6 +56,25 @@ h2 {
   }
 }
 //General - End
+//Header - Start
+.header {
+  background-color: $gray-dark;
+  box-shadow: $header-Shadow;
+
+  &__navigation {
+    background-color: transparent;
+    box-shadow: none;
+
+    .sidenav {
+      background-color: $gray-dark !important;
+
+      li a {
+        color: $light !important;
+      }
+    }
+  }
+}
+//Header - End
 // About - Start
 .about {
   margin-top: 100px;
@@ -103,7 +125,7 @@ h2 {
 //Timer - End
 //Footer - Start
 .footer {
-  background-color: $footer-Background !important;
+  background-color: $light-Background !important;
 
   &__wrap {
     h5 {
@@ -114,7 +136,12 @@ h2 {
       color: $gray-light !important;
     }
   }
-
+  &__hr{
+    height: 2px;
+    max-width: 90%;
+    background-color: $gray-light;
+    border: none;
+  }
   &-copyright {
     display: block !important;
     background-color: transparent !important;

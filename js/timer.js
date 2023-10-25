@@ -1,5 +1,5 @@
 export class Timer {
-  timerOutputDefaultValue = "Your timer goes here...";
+  timerOutputDefaultValue = "Your timer's countdown will go here...";
   duration = 0;
   countdown;
 
