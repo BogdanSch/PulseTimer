@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puls Timer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav role="navigation">
+            <div class="nav-wrapper container">
+                <a href="/" class="brand-logo">PulsTimer</a>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#timer">Timer</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+                <ul id="nav-mobile" class="sidenav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#timer">Timer</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="about center-align" id="about">
+            <div class="container">
+                <div class="about__wrap row valign-wrapper">
+                    <div class="col l6 s12 center-align">
+                        <div class="content-text">
+                            <h1 class="about__title">About Puls Timer</h1>
+                            <p><strong>Puls Timer</strong> is your reliable web-based time management companion,
+                                offering an array of
+                                features that help you effortlessly manage your tasks and enhance productivity. With
+                                this new tool, you can set timers with ease, stay organized, and optimize your
+                                workflow.Say goodbye to procrastination and hello to efficiency
+                                today. Get started today with <strong>Puls Timer!</strong></p>
+                            <a class="waves-effect waves-light btn z-depth-2" href="#timer">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="col l5 s12 offset-l1 center-align">
+                        <img src="./images/timer-image.avif" class="about__image" alt="Puls Timer About Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="timer" id="timer" data-aos="fade-up" data-aos-duration="2000">
+            <div class="container">
+                <div class="timer__wrap">
+                    <div class="content-text">
+                        <h2 class="timer__title center-align">Let's set up your first timer</h2>
+                        <p>Hint: To setup your timer fill in the information in the form below and click start button
+                            and you will se the countdown.</p>
+                    </div>
+                    <form class="timer__form">
+                        <div class="timer__form-inputs">
+                            <div class="input-field">
+                                <input id="minutesInput" type="number" min="0" value="0" class="validate" step="1">
+                                <label for="minutesInput">Minutes</label>
+                            </div>
+                            <div class="timer__form-span">
+                                <span>:</span>
+                            </div>
+                            <div class="input-field">
+                                <input id="secondsInput" type="number" min="0" max="59" value="0" class="validate"
+                                    step="1">
+                                <label for="secondsInput">Seconds</label>
+                            </div>
+                        </div>
+                        <div class="timer__form-buttons center-align col s12">
+                            <a id="startTimer" class="waves-effect waves-light btn btn-start-timer">Start Timer</a>
+                            <a id="resetTimer" class="waves-effect waves-light btn btn-reset-timer"
+                                style="display: none;">Reset
+                                Timer</a>
+                        </div>
+                    </form>
+                    <span class="timer__output" id="timer__output">
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer page-footer teal" data-aos="zoom-in-up" data-aos-duration="1500">
+        <div class="container">
+            <div class="footer__wrap">
+                <div class="row">
+                    <div class="col l5 s12 footer__bio">
+                        <h5 class="footer__bio-title">A bit about me</h5>
+                        <p>I'm Bohdan Shcherbak and I'm an experienced web, games and software developer.</p>
+                    </div>
+                    <div class="col l3 s12 footer__socials">
+                        <h5 class="footer__socials-title">My Socials</h5>
+                        <ul class="footer__socials-list">
+                            <li class="footer__socials-item"><a href="#">Link 1</a></li>
+                            <li class="footer__socials-item"><a href="#">Link 2</a></li>
+                            <li class="footer__socials-item"><a href="#">Link 3</a></li>
+                            <li class="footer__socials-item"><a href="#">Link 4</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l4 s12 footer__refuge">
+                        <h5 class="footer__refuge-title">I stand together with Ukraine</h5>
+                        <p>Your donates bring our wictory more closer.</p>
+                        <ul class="footer__refuge-list">
+                            <li class="footer__refuge-item"><a href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    @All rights reserved by Bohdan Shcherbak, 2023 Ukraine
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        M.AutoInit();
+        AOS.init();
+    </script>
+    <script src="./js/script.js" type="module"></script>
+</body>
+
+</html>

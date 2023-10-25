@@ -1,0 +1,139 @@
+//General - Start
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+//Colors
+$dark: #0f0f0f;
+$accent: #3e92cc;
+$gray: #575757;
+$gray-light: #6d6d6d;
+$light: #f0f8ff;
+$footer-Background: #f2f2f2;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  font-size: 16px;
+  color: $gray-light !important;
+}
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.btn {
+  border-radius: 20px;
+  background-color: $accent !important;
+}
+.content-text {
+  h1,
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+//General - End
+// About - Start
+.about {
+  margin-top: 100px;
+  img {
+    max-width: 100%;
+  }
+}
+//About - End
+//Timer _ Start
+.timer {
+  margin-top: 160px;
+  margin-bottom: 160px;
+
+  .content-text {
+    margin-bottom: 100px;
+  }
+  &__form {
+    &-inputs {
+      @include flex-row();
+      justify-content: center;
+      align-items: center;
+      column-gap: 20px;
+      flex-wrap: wrap;
+
+      & .input-field {
+        min-width: 25%;
+      }
+    }
+    &-span {
+      font-weight: 700;
+      min-width: 15%;
+      text-align: center;
+    }
+    &-buttons {
+      margin-top: 10px;
+    }
+  }
+
+  &__output {
+    display: block;
+    margin-top: 100px;
+    font-weight: 500;
+    font-size: 32px;
+    color: $gray;
+    text-align: center;
+  }
+}
+//Timer - End
+//Footer - Start
+.footer {
+  background-color: $footer-Background !important;
+
+  &__wrap {
+    h5 {
+      color: $gray !important;
+    }
+    li,
+    a {
+      color: $gray-light !important;
+    }
+  }
+
+  &-copyright {
+    display: block !important;
+    background-color: transparent !important;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: $gray !important;
+  }
+}
+//Footer - End
+//Media queries
+@media screen and (max-width: 992px) {
+  //Small screen
+  .about {
+    &__wrap {
+      flex-direction: column-reverse;
+    }
+    &__image {
+      max-width: 60% !important;
+    }
+  }
+}
