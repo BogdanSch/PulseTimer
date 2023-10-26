@@ -3,9 +3,15 @@ export class Timer {
   duration = 0;
   countdown;
 
-  constructor(timerAlertHandler, startTimerButton, resetTimerButton) {
+  constructor(
+    timerAlertHandler,
+    playAlarmAudio,
+    startTimerButton,
+    resetTimerButton
+  ) {
     this.timerAlertHandler = timerAlertHandler;
     this.timerAlertHandler(this.timerOutputDefaultValue);
+    this.playAlarmAudio = playAlarmAudio;
     this.startTimerButton = startTimerButton;
     this.resetTimerButton = resetTimerButton;
   }
@@ -28,7 +34,7 @@ export class Timer {
       if (this.duration <= 0) {
         clearInterval(this.countdown);
         this.timerAlertHandler("Your timer is up!");
-        //Playing sound
+        this.playAlarmAudio();
         this.enableStartButton(true);
       }
     }, 1000);

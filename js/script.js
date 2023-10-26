@@ -10,16 +10,25 @@ const startTimerButton = document.querySelector(".btn-start-timer");
 const resetTimerButton = document.querySelector(".btn-reset-timer");
 const timerContainer = document.querySelector("#timer__output");
 
+const timerRingtone = document.querySelector("#timerRingtone");
+
 const formValidator = new FormValidator(minutesInput, secondsInput);
 const timer = new Timer(
   timerAlertHandler,
+  playAlarmAudio,
   startTimerButton,
-  resetTimerButton,
-  formValidator
+  resetTimerButton
 );
 
 function timerAlertHandler(message) {
   timerContainer.innerHTML = message;
+}
+
+function playAlarmAudio() {
+  timerRingtone.play();
+  setTimeout(() => {
+    timerRingtone.pause();
+  }, 8000);
 }
 
 startTimerButton.addEventListener("click", (e) => {
@@ -31,8 +40,6 @@ startTimerButton.addEventListener("click", (e) => {
     setTimeout(() => {
       timer.startTimer(formValidator.minutesValue, formValidator.secondsValue);
     }, 300);
-
-    // timer.startTimer(formValidator.minutesValue, formValidator.secondsValue);
   } else {
     timerAlertHandler("Please try to enter correct values!");
   }
