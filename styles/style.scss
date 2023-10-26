@@ -96,11 +96,18 @@ h2 {
       @include flex-row();
       justify-content: center;
       align-items: center;
-      column-gap: 20px;
       flex-wrap: wrap;
 
       & .input-field {
-        min-width: 25%;
+        width: 20%;
+
+        input {
+          border: none !important;
+          border-radius: 30px;
+          text-align: center;
+          margin-top: 5px;
+          border: 2px solid $gray-light !important;
+        }
       }
     }
     &-span {
@@ -134,9 +141,10 @@ h2 {
     li,
     a {
       color: $gray-light !important;
+      transition: all 0.5s ease;
     }
   }
-  &__hr{
+  &__hr {
     height: 2px;
     max-width: 90%;
     background-color: $gray-light;
@@ -149,6 +157,11 @@ h2 {
     font-weight: 700;
     font-size: 20px;
     color: $gray !important;
+  }
+  li a:hover {
+    border-bottom: 1px solid $gray-light;
+    color: $dark !important;
+    font-size: 16px;
   }
 }
 //Footer - End
