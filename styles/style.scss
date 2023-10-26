@@ -29,7 +29,9 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
+.wrapper{
+  overflow: hidden;
+}
 p {
   font-size: 16px;
   color: $gray-light !important;
@@ -83,6 +85,22 @@ h2 {
   }
 }
 //About - End
+//Benefits - Start
+.benefits{
+  margin: 160px auto;
+
+  &__timer{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &__item{
+    text-align: center;
+    i{
+      color: $accent;
+    }
+  }
+}
+//Benefits - End
 //Timer _ Start
 .timer {
   margin-top: 160px;
